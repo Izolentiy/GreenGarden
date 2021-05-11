@@ -1,16 +1,29 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.SunflowerClone" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+<resources>
+
+    <style name="Base.Theme.SunflowerClone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_900</item>
+        <item name="colorOnPrimary">@color/yellow_300</item>
+        <item name="colorPrimaryDark">@color/gray_50_a600</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorAccent">@color/green_300</item>
+        <item name="colorSurface">@color/green_900</item>
+        <item name="colorSecondary">@color/yellow_300</item>
+        <item name="android:colorBackground">@color/green_900</item>
+
+        <item name="fontFamily">@font/poppins_regular</item>
     </style>
+
+    <style name="Theme.SunflowerClone" parent="Base.Theme.SunflowerClone" />
+
+    <style name="Theme.SunflowerClone.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SunflowerClone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="TextAppearance.SunflowerClone.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
 </resources>

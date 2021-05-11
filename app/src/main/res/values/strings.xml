@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SunflowerClone</string>
+    <string name="plant_photo_description">Picture of plant</string>
 </resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/fragment_gallery">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="photo"
+            type="org.android.learning.sunflower.data.UnsplashPhoto" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_view_plant_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/plant_photo_description"
+                android:scaleType="centerInside"
+                app:imageFromUrl="@{photo.urls.small}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/text_view_photographer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_gradient"
+                android:gravity="center_horizontal|bottom"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:text="@{photo.user.name}"
+                app:layout_constraintBottom_toBottomOf="@id/image_view_plant_photo"
+                app:layout_constraintEnd_toEndOf="@id/image_view_plant_photo"
+                app:layout_constraintStart_toStartOf="@id/image_view_plant_photo"
+                app:layout_constraintTop_toTopOf="@id/image_view_plant_photo"
+                tools:text="@sample/photographers" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
