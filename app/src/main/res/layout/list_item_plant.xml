@@ -2,16 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="@layout/fragment_gallery">
+    tools:showIn="@layout/fragment_plant_list">
 
     <data>
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
-
         <variable
-            name="photo"
-            type="org.android.learning.sunflower.data.UnsplashPhoto" />
+            name="plant"
+            type="org.android.learning.sunflower.data.Plant" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -27,33 +26,32 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/image_view_plant_photo"
-                android:layout_width="wrap_content"
+                android:id="@+id/image_view_plant_picture"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/plant_photo_description"
                 android:scaleType="fitCenter"
-                app:imageFromUrl="@{photo.urls.small}"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:imageFromUrl="@{plant.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
-                android:id="@+id/text_view_photographer"
+                android:id="@+id/text_view_plant_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/gray_50_a700"
-                android:gravity="center_horizontal|bottom"
-                android:lineSpacingMultiplier=""
-                android:text="@{photo.user.name}"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@{plant.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                 android:textColor="@color/green_900"
-                app:layout_constraintBottom_toBottomOf="@id/image_view_plant_photo"
-                app:layout_constraintEnd_toEndOf="@id/image_view_plant_photo"
-                app:layout_constraintStart_toStartOf="@id/image_view_plant_photo"
-                tools:text="@sample/photographers" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@sample/garden_plant_names" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,17 +8,19 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
+            android:id="@+id/appbar_gallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Theme.SunflowerClone.AppBarOverlay">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_gallery"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_back"
-                app:title="Photos by Unsplash" />
+                app:title="Photos by Unsplash"
+                app:titleTextAppearance="@style/Theme.SunflowerClone.AppBarOverlay"
+                app:titleTextColor="@color/white" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,11 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:padding="4dp"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:spanCount="2"
             tools:context=".GardenActivity"
-            tools:itemCount="7"
+            tools:itemCount="15"
             tools:listitem="@layout/list_item_photo" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

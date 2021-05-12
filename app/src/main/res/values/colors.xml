@@ -3,6 +3,9 @@
     <color name="black">#de000000</color>
     <color name="gray_50">#fafafa</color>
     <color name="gray_50_a600">#99fafafa</color>
+    <color name="gray_50_a700">#B9fafafa</color>
+    <color name="black_a600">#99000000</color>
+    <color name="gray_100">#424242</color>
     <color name="green_300">#6dc790</color>
     <color name="green_500">#49bb79</color>
     <color name="green_700">#005d2b</color>

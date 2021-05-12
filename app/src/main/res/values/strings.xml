@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">SunflowerClone</string>
+    <string name="app_name">Green garden</string>
     <string name="plant_photo_description">Picture of plant</string>
+    <string name="last_watered_label">Last Watered</string>
+    <string name="planted_label">Planted</string>
+    <string name="your_garden_is_empty">Your garden is empty</string>
+    <string name="add_plant">Add plant</string>
 </resources>
