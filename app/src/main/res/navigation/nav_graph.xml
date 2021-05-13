@@ -2,8 +2,15 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/view_pager_fragment">
 
+    <fragment
+        android:id="@+id/view_pager_fragment"
+        android:name="org.android.learning.sunflower.fragments.ViewPagerFragment"
+        tools:layout="@layout/fragment_view_pager">
 
+    </fragment>
 
 </navigation>

@@ -70,7 +70,6 @@
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.plantDateString}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="@color/gray_100"
                     app:layout_constraintBaseline_toBaselineOf="@id/text_view_plant_date_label"
                     app:layout_constraintEnd_toEndOf="parent"
                     tools:text="@sample/plant_dates" />
@@ -92,7 +91,6 @@
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.waterDateString}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="@color/gray_100"
                     app:layout_constraintBaseline_toBaselineOf="@id/text_view_last_watered_label"
                     app:layout_constraintEnd_toEndOf="parent"
                     tools:text="@sample/plant_dates" />
@@ -105,7 +103,6 @@
                     android:gravity="center_horizontal"
                     android:text="@{viewModel.waterInterval}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="@color/gray_100"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

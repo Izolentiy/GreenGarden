@@ -9,8 +9,8 @@ class PlantAndGardenPlantViewModel(plantings: PlantAndGardenPlant) {
     private val plant = checkNotNull(plantings.plant)
     private val gardenPlant = plantings.gardenPlants[0]
 
-    val waterDateString = dateFormat.format(gardenPlant.lastWateringDate.time)
-    val plantDateString = dateFormat.format(gardenPlant.plantDate.time)
+    val waterDateString: String = dateFormat.format(gardenPlant.lastWateringDate.time)
+    val plantDateString: String = dateFormat.format(gardenPlant.plantDate.time)
 
     val waterInterval get() = plant.wateringInterval
     val imageUrl get() = plant.imageUrl

@@ -46,7 +46,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/gray_50_a700"
                 android:gravity="center_horizontal|bottom"
-                android:lineSpacingMultiplier=""
                 android:text="@{photo.user.name}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textColor="@color/green_900"

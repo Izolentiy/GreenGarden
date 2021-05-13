@@ -10,7 +10,7 @@
         <item name="colorSecondary">@color/yellow_300</item>
         <item name="android:colorBackground">@color/green_900</item>
 
-        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/comfortaa_variable_font_wght</item>
     </style>
 
     <style name="Theme.SunflowerClone" parent="Base.Theme.SunflowerClone" />
@@ -20,7 +20,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.SunflowerClone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <style name="Theme.SunflowerClone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="TextAppearance.SunflowerClone.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textColor">?attr/colorOnSurface</item>
