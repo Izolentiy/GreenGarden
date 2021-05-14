@@ -9,8 +9,9 @@
         <item name="colorSurface">@color/green_900</item>
         <item name="colorSecondary">@color/yellow_300</item>
         <item name="android:colorBackground">@color/green_900</item>
+        <item name="android:statusBarColor">@color/green_905</item>
 
-        <item name="fontFamily">@font/comfortaa_variable_font_wght</item>
+        <item name="fontFamily">@font/comfortaa_variable_font</item>
     </style>
 
     <style name="Theme.SunflowerClone" parent="Base.Theme.SunflowerClone" />
@@ -27,6 +28,10 @@
 
     <style name="TextAppearance.SunflowerClone.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.SunflowerClone.Tab.Text" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

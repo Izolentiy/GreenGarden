@@ -5,29 +5,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import org.android.learning.sunflower.adapters.GardenPlantAdapter
+import org.android.learning.sunflower.data.PlantAndGardenPlant
 import org.android.learning.sunflower.databinding.FragmentGardenBinding
+import org.android.learning.sunflower.viewmodels.GardenPlantsViewModel
 
 @AndroidEntryPoint
 class GardenFragment : Fragment() {
 
-    // TODO: Implement view model
+    private var _binding: FragmentGardenBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: GardenPlantsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentGardenBinding.inflate(inflater, container, false)
+        _binding = FragmentGardenBinding.inflate(inflater, container, false)
+
         val gardenPlantsAdapter = GardenPlantAdapter()
-        binding.apply {
-            recyclerViewGardenPlants.adapter = gardenPlantsAdapter
-            // TODO: Implement subscription and result handling
+        binding.recyclerViewGardenPlants.adapter = gardenPlantsAdapter
+
+        // Subscribe to UI updates
+        lifecycleScope.launchWhenStarted {
+            viewModel.plantAndGardenPlants.collect { list -> handleListUpdate(list) }
         }
         return binding.root
     }
 
-    private fun handleResult() {}
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun handleListUpdate(list: List<PlantAndGardenPlant>) {
+        with(binding) {
+            val adapter = recyclerViewGardenPlants.adapter as GardenPlantAdapter
+            hasPlantings = !list.isNullOrEmpty()
+            adapter.submitList(list)
+        }
+    }
 
 }

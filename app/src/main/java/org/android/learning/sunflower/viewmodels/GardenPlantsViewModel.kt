@@ -1,3 +1,16 @@
 package org.android.learning.sunflower.viewmodels
 
-class GardenPlantsViewModel ()  // TODO: Implement ViewModel for "My garden" tab
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
+import org.android.learning.sunflower.data.PlantAndGardenPlant
+import org.android.learning.sunflower.repositories.GardenPlantRepository
+import javax.inject.Inject
+
+@HiltViewModel
+class GardenPlantsViewModel @Inject constructor(
+    gardenPlantRepository: GardenPlantRepository
+) : ViewModel() {
+    val plantAndGardenPlants: Flow<List<PlantAndGardenPlant>> =
+        gardenPlantRepository.getPlantedGardens()
+}

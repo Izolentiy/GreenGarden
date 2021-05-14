@@ -9,7 +9,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:theme="@style/Theme.SunflowerClone.AppBarOverlay">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -39,9 +39,13 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
+                style="@style/Widget.MaterialComponents.TabLayout.Colored"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 app:tabIconTint="@color/clr_tab_icon_selector"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabInlineLabel="true"
+                app:tabTextAppearance="@style/TextAppearance.SunflowerClone.Tab.Text"
                 app:tabTextColor="?attr/colorPrimaryDark" />
 
         </com.google.android.material.appbar.AppBarLayout>
