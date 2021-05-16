@@ -3,7 +3,12 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
+
+// Point your Unsplash api key in "local.properties" file
+def local_properties = new Properties()
+local_properties.load(new FileInputStream(rootProject.file("local.properties")))
 
 android {
     compileSdkVersion 30
@@ -17,6 +22,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Create constant in BuildConfig class to access it throughout an app
+        buildConfigField("String", "UNSPLASH_API_KEY", local_properties['unsplash_api_key'])
     }
 
     buildTypes {
@@ -30,7 +38,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8
     }
     buildFeatures {
         dataBinding true
@@ -54,6 +62,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
     /*implementation "androidx.lifecycle:lifecycle-extensions:2.3.0"*/
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"

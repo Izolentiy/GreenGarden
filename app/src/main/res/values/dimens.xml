@@ -4,4 +4,5 @@
     <dimen name="card_padding">8dp</dimen>
     <dimen name="card_corner_radius">12dp</dimen>
     <dimen name="button_corner_radius">12dp</dimen>
+    <dimen name="margin_list_item">6dp</dimen>
 </resources>

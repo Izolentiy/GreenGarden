@@ -7,4 +7,10 @@
     <string name="add_plant">Add plant</string>
     <string name="garden_tab_title">My garden</string>
     <string name="plants_tab_title">Plants</string>
+    <string name="navigate_to_gallery">Navigate to gallery</string>
+    <string name="add_to_garden">Add to garden</string>
+    <string name="added_plant_to_garden">Added plant to garden</string>
+    <string name="watering_text_format">every %d days</string>
+    <string name="watering_text_garden_format">water in %d days</string>
+    <string name="watering_needs">Watering needs</string>
 </resources>
