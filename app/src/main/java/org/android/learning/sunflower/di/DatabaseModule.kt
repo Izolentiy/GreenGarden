@@ -17,8 +17,8 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule {
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideAppDatabase(
         @ApplicationContext context: Context,
         callback: AppDatabase.Callback
@@ -31,13 +31,12 @@ class DatabaseModule {
     @Provides
     fun provideGardenPlantDao(appDatabase: AppDatabase) = appDatabase.gardenPlantDao()
 
-    @ApplicationScope
     @Provides
     @Singleton
+    @ApplicationScope
     fun provideApplicationScope() = CoroutineScope(SupervisorJob())
 
+    @Retention(AnnotationRetention.RUNTIME)
+    @Qualifier
+    annotation class ApplicationScope
 }
-
-@Retention(AnnotationRetention.RUNTIME)
-@Qualifier
-annotation class ApplicationScope

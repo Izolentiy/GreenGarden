@@ -11,7 +11,7 @@ import com.google.gson.stream.JsonReader
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.android.learning.sunflower.di.ApplicationScope
+import org.android.learning.sunflower.di.DatabaseModule.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
 

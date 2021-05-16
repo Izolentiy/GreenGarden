@@ -81,7 +81,9 @@ class PlantDetailFragment : Fragment() {
 
     private fun navigateToGallery() {
         plantDetailViewModel.plant.value?.let { plant ->
-            // TODO: Implement navigation to gallery fragment
+            val direction = PlantDetailFragmentDirections
+                .actionPlantDetailFragmentToGalleryFragment(plant.name)
+            findNavController().navigate(direction)
         }
     }
 

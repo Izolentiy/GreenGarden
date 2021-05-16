@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/green_300</item>
         <item name="colorSurface">@color/green_900</item>
         <item name="colorSecondary">@color/yellow_300</item>
+        <item name="colorOnPrimarySurface">@color/white</item>
         <item name="android:colorBackground">@color/green_900</item>
         <item name="android:statusBarColor">@color/green_905</item>
 
@@ -24,6 +25,7 @@
     <style name="Theme.SunflowerClone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" >
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="backgroundColor">?attr/colorPrimary</item>
     </style>
 
     <style name="TextAppearance.SunflowerClone.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
