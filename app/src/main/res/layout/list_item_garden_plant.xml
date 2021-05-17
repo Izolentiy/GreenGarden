@@ -68,10 +68,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.plantDateString}"
-                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    app:layout_constraintBaseline_toBaselineOf="@id/text_view_plant_date_label"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_plant_date_label"
                     tools:text="@sample/plant_dates" />
 
                 <TextView
@@ -83,17 +83,17 @@
                     android:textColor="?attr/colorAccent"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_plant_date_label" />
+                    app:layout_constraintTop_toBottomOf="@id/text_view_plant_date" />
 
                 <TextView
                     android:id="@+id/text_view_last_watered"
                     android:layout_width="wrap_content"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.waterDateString.toString()}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    app:layout_constraintBaseline_toBaselineOf="@id/text_view_last_watered_label"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_last_watered_label"
                     tools:text="@sample/plant_dates" />
 
                 <TextView
@@ -101,13 +101,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_last_watered_label"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_last_watered"
                     app:wateringTextGarden="@{viewModel.waterInterval}"
                     tools:text="@sample/water_intervals" />
 

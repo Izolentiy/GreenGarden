@@ -6,4 +6,6 @@
     <dimen name="button_corner_radius">12dp</dimen>
     <dimen name="margin_list_item">6dp</dimen>
     <dimen name="padding_text_list_item">4dp</dimen>
+    <dimen name="toolbar_inset_with_navigation">12dp</dimen>
+    <dimen name="detaial_toolbar_height">280dp</dimen>
 </resources>

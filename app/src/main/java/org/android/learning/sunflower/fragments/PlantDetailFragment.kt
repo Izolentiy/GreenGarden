@@ -1,22 +1,19 @@
 package org.android.learning.sunflower.fragments
 
+import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.isActive
 import org.android.learning.sunflower.R
 import org.android.learning.sunflower.data.Plant
 import org.android.learning.sunflower.databinding.FragmentPlantDetailBinding
@@ -50,8 +47,12 @@ class PlantDetailFragment : Fragment() {
 
             imageViewGallery.setOnClickListener { navigateToGallery() }
 
-            var isToolbarShown = false
-            // Scroll change listener begins at Y = 0 when image is fully collapsed
+            /*var isToolbarShown = false*/
+            // Settings up toolbar font
+            val typeface = ResourcesCompat.getFont(requireContext(), R.font.comfortaa_medium)
+            toolbarDetailLayout.setCollapsedTitleTypeface(typeface)
+            toolbarDetailLayout.setExpandedTitleTypeface(typeface)
+            /*// Scroll change listener begins at Y = 0 when image is fully collapsed
             scrollViewPlantDetail.setOnScrollChangeListener { _, _, scrollY, _, _ ->
                 // User scrolled past image to height of toolbar and the title text is
                 // underneath the toolbar, so the toolbar should be shown
@@ -67,7 +68,7 @@ class PlantDetailFragment : Fragment() {
                     // Show the plant name in toolbar
                     toolbarDetailLayout.isTitleEnabled = shouldShowToolbar
                 }
-            }
+            }*/
 
             toolbarDetail.setNavigationOnClickListener { view ->
                 view.findNavController().navigateUp()

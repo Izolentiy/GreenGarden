@@ -17,6 +17,8 @@
                 android:id="@+id/toolbar_gallery"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:contentInsetStartWithNavigation="@dimen/toolbar_inset_with_navigation"
                 app:navigationIcon="@drawable/ic_back"
                 app:title="Photos by Unsplash"
                 app:titleTextAppearance="@style/Theme.SunflowerClone.AppBarOverlay"

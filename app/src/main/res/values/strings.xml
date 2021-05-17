@@ -1,4 +1,5 @@
 <resources>
+    <!--TODO: Later apply android resource naming convention to all resources-->
     <string name="app_name">Green garden</string>
     <string name="plant_photo_description">Picture of plant</string>
     <string name="last_watered_label">Last Watered</string>

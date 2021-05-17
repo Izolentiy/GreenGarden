@@ -43,7 +43,7 @@
                 android:gravity="center"
                 android:padding="@dimen/padding_text_list_item"
                 android:text="@{photo.user.name}"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                 android:textColor="?attr/colorOnPrimarySurface"
                 tools:text="@sample/photographers" />
 
