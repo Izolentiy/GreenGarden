@@ -9,8 +9,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/Theme.SunflowerClone.AppBarOverlay">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
@@ -23,6 +22,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/colorPrimary"
+                    android:theme="@style/Theme.SunflowerClone.AppBarOverlay"
                     app:contentInsetStart="0dp"
                     app:layout_collapseMode="parallax">
 
@@ -30,7 +30,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
                         android:gravity="center"
-                        android:textAppearance="@style/TextAppearance.SunflowerClone.Toolbar.Text"
                         android:text="@string/app_name"
                         android:textColor="@color/white" />
 

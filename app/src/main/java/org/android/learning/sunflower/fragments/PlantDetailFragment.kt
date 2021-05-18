@@ -1,6 +1,5 @@
 package org.android.learning.sunflower.fragments
 
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +48,7 @@ class PlantDetailFragment : Fragment() {
 
             /*var isToolbarShown = false*/
             // Settings up toolbar font
-            val typeface = ResourcesCompat.getFont(requireContext(), R.font.comfortaa_medium)
+            val typeface = ResourcesCompat.getFont(requireContext(), R.font.gilroy_medium)
             toolbarDetailLayout.setCollapsedTitleTypeface(typeface)
             toolbarDetailLayout.setExpandedTitleTypeface(typeface)
             /*// Scroll change listener begins at Y = 0 when image is fully collapsed

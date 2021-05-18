@@ -11,7 +11,7 @@
         <item name="colorOnPrimarySurface">@color/black</item>
         <item name="android:colorBackground">@color/green_500</item>
 
-        <item name="android:fontFamily">@font/comfortaa_variable_font</item>
+        <item name="android:fontFamily">@font/gilroy_regular</item>
     </style>
 
     <style name="Theme.SunflowerClone" parent="Base.Theme.SunflowerClone" />
@@ -24,7 +24,7 @@
     <style name="Theme.SunflowerClone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="android:letterSpacing">0.0125</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/gilroy_medium</item>
     </style>
 
     <style name="TextAppearance.SunflowerClone.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline6">

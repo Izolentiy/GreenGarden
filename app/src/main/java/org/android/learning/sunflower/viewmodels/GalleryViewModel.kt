@@ -7,7 +7,7 @@ import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import org.android.learning.sunflower.data.UnsplashPhoto
-import org.android.learning.sunflower.data.UnsplashRepository
+import org.android.learning.sunflower.repositories.UnsplashRepository
 import javax.inject.Inject
 
 @HiltViewModel

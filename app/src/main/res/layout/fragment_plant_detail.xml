@@ -122,7 +122,6 @@
                     android:gravity="center"
                     android:textAppearance="?attr/textAppearanceSubtitle2"
                     android:textColor="?attr/colorOnSurface"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_watering_label"
