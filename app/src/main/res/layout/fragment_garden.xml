@@ -37,12 +37,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/quicksand_variable_font_wght"
                 android:gravity="center"
                 android:text="@string/your_garden_is_empty"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textColor="?attr/colorOnPrimary"
-                android:textStyle="bold" />
+                android:textColor="?attr/colorOnPrimary" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_add_plant"
@@ -50,11 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="?attr/colorSecondary"
-                android:fontFamily="@font/quicksand_variable_font_wght"
                 android:text="@string/add_plant"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
                 app:shapeAppearance="@style/ShapeAppearance.SunflowerClone.Button.Add" />
 
         </LinearLayout>

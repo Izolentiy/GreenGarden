@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.viewpager2.widget.ViewPager2
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import org.android.learning.sunflower.R
 import org.android.learning.sunflower.adapters.GardenPlantAdapter
+import org.android.learning.sunflower.adapters.Tab
 import org.android.learning.sunflower.data.PlantAndGardenPlant
 import org.android.learning.sunflower.databinding.FragmentGardenBinding
 import org.android.learning.sunflower.viewmodels.GardenPlantsViewModel
@@ -29,7 +32,10 @@ class GardenFragment : Fragment() {
         _binding = FragmentGardenBinding.inflate(inflater, container, false)
 
         val gardenPlantsAdapter = GardenPlantAdapter()
-        binding.recyclerViewGardenPlants.adapter = gardenPlantsAdapter
+        binding.apply {
+            recyclerViewGardenPlants.adapter = gardenPlantsAdapter
+            buttonAddPlant.setOnClickListener { navigateToPlantList() }
+        }
 
         // Subscribe to UI updates
         lifecycleScope.launchWhenStarted {
@@ -49,6 +55,10 @@ class GardenFragment : Fragment() {
             hasPlantings = !list.isNullOrEmpty()
             adapter.submitList(list)
         }
+    }
+
+    private fun navigateToPlantList() {
+        requireActivity().findViewById<ViewPager2>(R.id.view_pager).currentItem = Tab.PLANTS.index
     }
 
 }

@@ -30,16 +30,16 @@
                 android:id="@+id/toolbar_detail_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:contentScrim="?attr/colorSurface"
                 android:fitsSystemWindows="true"
+                app:collapsedTitleGravity="start|center_vertical"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.SunflowerClone.Toolbar.Text"
+                app:contentScrim="?attr/colorSurface"
                 app:expandedTitleMarginBottom="20dp"
                 app:expandedTitleMarginStart="12dp"
-                app:collapsedTitleGravity="start|center_vertical"
                 app:expandedTitleTextAppearance="@style/TextAppearance.SunflowerClone.Toolbar.ExpandedText"
-                app:collapsedTitleTextAppearance="@style/TextAppearance.SunflowerClone.Toolbar.Text"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                app:title="@{viewModel.plant.name}"
                 app:maxLines="2"
+                app:title="@{viewModel.plant.name}"
                 app:toolbarId="@id/toolbar_detail">
 
                 <ImageView
@@ -54,16 +54,17 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:background="@drawable/bg_gradient"
-                    android:layout_gravity="bottom" />
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_gradient" />
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar_detail"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/transparent"
-                    app:layout_collapseMode="pin"
+                    android:theme="@style/Theme.SunflowerClone.ToolbarOverlay"
                     app:contentInsetStartWithNavigation="@dimen/toolbar_inset_with_navigation"
+                    app:layout_collapseMode="pin"
                     app:navigationIcon="@drawable/ic_detail_back"
                     app:titleTextColor="?attr/colorOnSurface" />
 
@@ -92,10 +93,11 @@
                     android:id="@+id/image_view_gallery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/navigate_to_gallery"
-                    android:src="@drawable/ic_photo_library"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
+                    android:contentDescription="@string/navigate_to_gallery"
                     android:focusable="true"
+                    android:src="@drawable/ic_photo_library"
                     app:isGone="@{!viewModel.hasValidUnsplashKey()}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/text_view_watering_label" />
@@ -133,8 +135,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:fontFamily="sans-serif"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_detail_water_interval"

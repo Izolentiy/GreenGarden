@@ -3,9 +3,11 @@ package org.android.learning.sunflower.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import org.android.learning.sunflower.fragments.ViewPagerFragmentDirections
 import org.android.learning.sunflower.viewmodels.PlantAndGardenPlantViewModel
 import org.android.learning.sunflower.data.PlantAndGardenPlant as ListItem
 import org.android.learning.sunflower.databinding.ListItemGardenPlantBinding as Binding
@@ -36,7 +38,9 @@ class GardenPlantAdapter :
         }
 
         private fun navigateTo(plantId: String, view: View) {
-            // TODO: Implement navigation to specified plant detail screen
+            val direction = ViewPagerFragmentDirections
+                .actionViewPagerFragmentToPlantDetailFragment(plantId)
+            view.findNavController().navigate(direction)
         }
 
     }

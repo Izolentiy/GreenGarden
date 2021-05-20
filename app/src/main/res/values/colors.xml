@@ -15,4 +15,6 @@
     <color name="yellow_300">#f8f99f</color>
     <color name="yellow_500">#ffff63</color>
     <color name="transparent_gray">#9F000000</color>
+    <color name="ripple_dark">#20ffffff</color>
+    <color name="ripple_light">#20000000</color>
 </resources>

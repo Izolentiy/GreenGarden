@@ -45,7 +45,7 @@
                 app:tabIconTint="@color/clr_tab_icon_selector"
                 app:tabIndicatorAnimationMode="elastic"
                 app:tabInlineLabel="true"
-                app:tabTextAppearance="@style/TextAppearance.SunflowerClone.Tab.Text"
+                app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 app:tabTextColor="?attr/colorPrimaryDark" />
 
         </com.google.android.material.appbar.AppBarLayout>
