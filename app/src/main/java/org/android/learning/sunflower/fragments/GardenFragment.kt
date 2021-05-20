@@ -58,7 +58,8 @@ class GardenFragment : Fragment() {
     }
 
     private fun navigateToPlantList() {
-        requireActivity().findViewById<ViewPager2>(R.id.view_pager).currentItem = Tab.PLANTS.index
+        requireActivity().findViewById<ViewPager2>(R.id.view_pager)
+            .currentItem = Tab.values().indexOf(Tab.PLANTS)
     }
 
 }

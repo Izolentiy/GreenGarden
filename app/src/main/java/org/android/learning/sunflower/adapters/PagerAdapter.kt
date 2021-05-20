@@ -5,9 +5,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import org.android.learning.sunflower.fragments.GardenFragment
 import org.android.learning.sunflower.fragments.PlantsFragment
 
-enum class Tab(val index: Int) {
-    MY_GARDEN(values().indexOf(MY_GARDEN)),
-    PLANTS(values().indexOf(PLANTS))
+enum class Tab {
+    MY_GARDEN,
+    PLANTS
 }
 
 class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
