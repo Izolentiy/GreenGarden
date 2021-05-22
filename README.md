@@ -2,7 +2,7 @@
 A gardening app illustrating Android development best practices with Android Jetpack. Refactored by me. I changed UI + made code more compact, expressive and readable.
 
 ### Old and new designs gif
-<img src="screenshots/demonstration_old.gif" width="300"> <img src="screenshots/demonstration.gif" width="300"> 
+<img src="screenshots/demonstration_old.gif" width="300"> <img src="screenshots/demonstration_new.gif" width="300"> 
 
 Libraries Used
 --------------
