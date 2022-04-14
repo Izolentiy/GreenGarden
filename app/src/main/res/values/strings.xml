@@ -14,4 +14,16 @@
     <string name="watering_text_format">every %d days</string>
     <string name="watering_text_garden_format">water in %d days</string>
     <string name="watering_needs">Watering needs</string>
+    <string name="message_no_internet">No internet connection</string>
+    <string name="detail_no_internet">Check your WiFi or Mobile data and retry</string>
+    <string name="message_401">Unauthenticated</string>
+    <string name="detail_401">Http status code: 401</string>
+    <string name="message_400_500">Client error</string>
+    <string name="detail_400_500">Http status code: %1$d. %2$s</string>
+    <string name="message_500_600">Server error</string>
+    <string name="detail_500_600">Http status code: %1$d. %2$s</string>
+    <string name="message_unexpected">Unexpected response</string>
+    <string name="message_unknown">Unknown error</string>
+    <string name="detail_unknown">An unknown error occurred while loading data</string>
+    <string name="button_retry">Retry</string>
 </resources>
