@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+misc.xml
+deploymentTargetDropDown.xml
+compiler.xml
+gradle.xml
+jarRepositories.xml
