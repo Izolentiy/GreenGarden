@@ -13,6 +13,7 @@ data class Plant(
     val description: String,
     val growZone: Int,
     val wateringInterval: Int = 7, // Value represented in days
+    val imageAsset: String = "",
     val imageUrl: String = ""
 ) {
 

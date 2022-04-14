@@ -35,7 +35,7 @@
                 android:layout_height="120dp"
                 android:contentDescription="@string/plant_photo_description"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{viewModel.imageUrl}"
+                app:imageFromAsset="@{viewModel.imageName}"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <androidx.constraintlayout.widget.ConstraintLayout

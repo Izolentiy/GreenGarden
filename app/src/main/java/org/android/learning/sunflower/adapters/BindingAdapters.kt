@@ -1,6 +1,7 @@
 package org.android.learning.sunflower.adapters
 
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.core.text.HtmlCompat
 import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.android.learning.sunflower.R
@@ -20,6 +22,19 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
         Log.d("_TAG", "bindImageFromUrl: loading $imageUrl")
         Glide.with(view.context)
             .load(imageUrl)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .placeholder(ColorDrawable(view.context.getColor(R.color.white)))
+            .into(view)
+    }
+}
+
+@BindingAdapter("imageFromAsset")
+fun bindImageFromAsset(view: ImageView, imageName: String?) {
+    if (!imageName.isNullOrEmpty()) {
+        Log.d("_TAG", "bindImageFromAsset: loading $imageName")
+        Glide.with(view.context)
+            .load(Uri.parse("file:///android_asset/$imageName"))
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .transition(DrawableTransitionOptions.withCrossFade())
             .placeholder(ColorDrawable(view.context.getColor(R.color.white)))
             .into(view)

@@ -36,7 +36,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/plant_photo_description"
                 android:scaleType="fitCenter"
-                app:imageFromUrl="@{plant.imageUrl}"
+                app:imageFromAsset="@{plant.imageAsset}"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
