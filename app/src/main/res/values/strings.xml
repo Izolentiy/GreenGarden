@@ -21,9 +21,10 @@
     <string name="message_400_500">Client error</string>
     <string name="detail_400_500">Http status code: %1$d. %2$s</string>
     <string name="message_500_600">Server error</string>
-    <string name="detail_500_600">Http status code: %1$d. %2$s</string>
+    <string name="detail_500_600">Http status code: %1$d. %2$s.\nTry again later</string>
     <string name="message_unexpected">Unexpected response</string>
     <string name="message_unknown">Unknown error</string>
     <string name="detail_unknown">An unknown error occurred while loading data</string>
     <string name="button_retry">Retry</string>
+    <string name="retry_button_description">Retry button</string>
 </resources>
