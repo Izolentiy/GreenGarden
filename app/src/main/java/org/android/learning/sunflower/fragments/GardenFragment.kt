@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.android.learning.sunflower.R
 import org.android.learning.sunflower.adapters.GardenPlantAdapter
 import org.android.learning.sunflower.adapters.Tab
@@ -31,15 +34,15 @@ class GardenFragment : Fragment() {
     ): View {
         _binding = FragmentGardenBinding.inflate(inflater, container, false)
 
-        val gardenPlantsAdapter = GardenPlantAdapter()
         binding.apply {
-            recyclerViewGardenPlants.adapter = gardenPlantsAdapter
+            recyclerViewGardenPlants.adapter = viewModel.gardenPlantsAdapter
             buttonAddPlant.setOnClickListener { navigateToPlantList() }
         }
 
-        // Subscribe to UI updates
-        lifecycleScope.launchWhenStarted {
-            viewModel.plantAndGardenPlants.collect { list -> handleListUpdate(list) }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.plantAndGardenPlants
+                .flowWithLifecycle(viewLifecycleOwner.lifecycle, Lifecycle.State.STARTED)
+                .collect { list -> handleListUpdate(list) }
         }
         return binding.root
     }

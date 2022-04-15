@@ -46,35 +46,19 @@ class PlantDetailFragment : Fragment() {
 
             imageViewGallery.setOnClickListener { navigateToGallery() }
 
-            /*var isToolbarShown = false*/
             // Settings up toolbar font
             val typeface = ResourcesCompat.getFont(requireContext(), R.font.gilroy_medium)
-            toolbarDetailLayout.setCollapsedTitleTypeface(typeface)
-            toolbarDetailLayout.setExpandedTitleTypeface(typeface)
-            /*// Scroll change listener begins at Y = 0 when image is fully collapsed
-            scrollViewPlantDetail.setOnScrollChangeListener { _, _, scrollY, _, _ ->
-                // User scrolled past image to height of toolbar and the title text is
-                // underneath the toolbar, so the toolbar should be shown
-                val shouldShowToolbar = scrollY > toolbarDetail.height
+            toolbarDetailLayout.apply {
+                setCollapsedTitleTypeface(typeface)
+                setExpandedTitleTypeface(typeface)
+            }
 
-                // The new state of the toolbar differs from the previous one;
-                // update appbar and toolbar attributes
-                if (isToolbarShown != shouldShowToolbar) {
-                    isToolbarShown = shouldShowToolbar
-
-                    // Use shadow animator to add elevation if toolbar is shown
-                    appbarDetail.isActivated = shouldShowToolbar
-                    // Show the plant name in toolbar
-                    toolbarDetailLayout.isTitleEnabled = shouldShowToolbar
-                }
-            }*/
 
             toolbarDetail.setNavigationOnClickListener { view ->
                 view.findNavController().navigateUp()
             }
-
-            // TODO: Implement share feature
         }
+
 
         return binding.root
     }

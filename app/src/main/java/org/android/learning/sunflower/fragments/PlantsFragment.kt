@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.android.learning.sunflower.adapters.PlantAdapter
 import org.android.learning.sunflower.data.Plant
 import org.android.learning.sunflower.databinding.FragmentPlantListBinding
@@ -27,14 +30,12 @@ class PlantsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPlantListBinding.inflate(inflater, container, false)
-        /*context ?: return binding.root*/
+        binding.recyclerViewPlantList.adapter = viewModel.plantAdapter
 
-        val plantAdapter = PlantAdapter()
-        binding.recyclerViewPlantList.adapter = plantAdapter
-
-        // Subscribe to UI updates
-        lifecycleScope.launchWhenStarted {
-            viewModel.plants.collect { list -> handleListUpdate(list) }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.plants
+                .flowWithLifecycle(viewLifecycleOwner.lifecycle, Lifecycle.State.STARTED)
+                .collect { list -> handleListUpdate(list) }
         }
 
         return binding.root
