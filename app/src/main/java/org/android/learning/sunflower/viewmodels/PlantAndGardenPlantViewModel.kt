@@ -19,6 +19,6 @@ class PlantAndGardenPlantViewModel(plantings: PlantAndGardenPlant) {
 
     companion object {
         // TODO("Maybe later will be added another locales support")
-        private val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.US)
+        private val dateFormat = SimpleDateFormat("MMM d, yyyy, HH:mm", Locale.US)
     }
 }

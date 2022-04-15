@@ -23,7 +23,7 @@ class StateAdapter(
                     textViewMessageError,
                     textViewDetailError,
                     buttonRetryAgain,
-                    binding.root.context
+                    root.context
                 )
                 handleError(loadState.error, errorTarget)
             }

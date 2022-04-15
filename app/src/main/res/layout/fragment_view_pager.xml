@@ -31,7 +31,7 @@
                         android:layout_height="?attr/actionBarSize"
                         android:gravity="center"
                         android:text="@string/app_name"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                 </com.google.android.material.appbar.MaterialToolbar>
 
@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 app:tabIconTint="@color/clr_tab_icon_selector"
                 app:tabIndicatorAnimationMode="elastic"
+                app:tabGravity="fill"
                 app:tabInlineLabel="true"
                 app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 app:tabTextColor="?attr/colorPrimaryDark" />

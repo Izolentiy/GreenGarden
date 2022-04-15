@@ -22,12 +22,12 @@
                 app:navigationIcon="@drawable/ic_back"
                 app:title="Photos by Unsplash"
                 app:titleTextAppearance="@style/Theme.SunflowerClone.AppBarOverlay"
-                app:titleTextColor="?attr/colorOnPrimary" />
+                app:titleTextColor="@color/white" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/photo_list"
+            android:id="@+id/error_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
@@ -37,7 +37,7 @@
             app:spanCount="2"
             tools:context=".GardenActivity"
             tools:itemCount="4"
-            tools:listitem="@layout/list_item_photo" />
+            tools:listitem="@layout/list_item_footer" />
 
         <LinearLayout
             android:id="@+id/layout_error"
