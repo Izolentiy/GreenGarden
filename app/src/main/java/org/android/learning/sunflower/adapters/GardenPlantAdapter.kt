@@ -25,12 +25,11 @@ class GardenPlantAdapter :
     inner class ViewHolder(private val binding: Binding) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.apply {
-                setClickListener { view -> viewModel?.plantId?.let { navigateTo(it, view) }}
+                setClickListener { view -> viewModel?.plantId?.let { navigateTo(it, view) } }
             }
         }
 
         fun bind(gardenPlant: ListItem) {
-            /*with(binding) {*/
             binding.apply {
                 viewModel = PlantAndGardenPlantViewModel(gardenPlant)
                 executePendingBindings()
@@ -50,6 +49,6 @@ class GardenPlantAdapter :
             oldItem.plant.plantId == newItem.plant.plantId
 
         override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem) =
-            oldItem.plant == newItem.plant
+            oldItem.gardenPlants == newItem.gardenPlants
     }
 }

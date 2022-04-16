@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.android.learning.sunflower.databinding.ListItemFooterBinding as Binding
 
 class StateAdapter(
+    private val recyclerView: RecyclerView,
     private val retry: () -> Unit
 ) : LoadStateAdapter<StateAdapter.ViewHolder>() {
 
@@ -26,9 +27,15 @@ class StateAdapter(
                     root.context
                 )
                 handleError(loadState.error, errorTarget)
+                with(recyclerView) {
+                    val position = checkNotNull(adapter?.itemCount)
+                    smoothScrollToPosition(position)
+                }
             }
             progressbarPhotoItem.isVisible = loadState is LoadState.Loading
             buttonRetryAgain.isVisible = loadState is LoadState.Error
+            textViewDetailError.isVisible = loadState is LoadState.Error
+            textViewMessageError.isVisible = loadState is LoadState.Error
         }
     }
 
