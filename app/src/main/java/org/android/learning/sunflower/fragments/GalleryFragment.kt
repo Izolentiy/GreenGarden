@@ -36,7 +36,7 @@ class GalleryFragment : Fragment() {
         val binding = FragmentGalleryBinding.inflate(inflater, container, false)
         binding.apply {
             photoList.adapter = viewModel.photoAdapter.withLoadStateFooter(
-                footer = StateAdapter { viewModel.photoAdapter.retry() }
+                footer = StateAdapter(photoList) { viewModel.photoAdapter.retry() }
             )
             viewModel.searchPictures(args.plantName)
 

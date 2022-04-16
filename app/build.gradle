@@ -15,11 +15,6 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-//        configurations.all {
-//            resolutionStrategy { force 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0' }
-//            resolutionStrategy { force 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0' }
-//            resolutionStrategy { force 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0' }
-//        }
 
         applicationId "org.android.learning.sunflower"
         minSdkVersion 24
