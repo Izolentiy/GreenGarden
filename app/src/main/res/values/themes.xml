@@ -38,4 +38,22 @@
         <item name="colorControlHighlight">@color/ripple_light</item>
     </style>
 
+    <style name="Theme.SunflowerClone.DialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="colorPrimary">?attr/colorAccent</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButton</item>
+        <item name="alertDialogStyle">@style/Container</item>
+    </style>
+
+    <style name="Container" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.SunflowerClone.Dialog</item>
+    </style>
+
+    <style name="DialogButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.SunflowerClone.Dialog</item>
+    </style>
+
 </resources>

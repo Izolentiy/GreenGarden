@@ -20,23 +20,23 @@ class PlantDetailViewModel @Inject constructor(
 ) : ViewModel() {
 
     val plantId: String = savedStateHandle.get<String>("plantId") ?: ""
-    // Later when DataBinding will support StateFlow uncomment the code below
-    /*
-    val isPlanted = gardenPlantRepository.isPlanted(plantId)
-        .stateIn(viewModelScope, SharingStarted.Lazily, false)
-    val plant = plantRepository.getPlant(plantId)
-        .stateIn(viewModelScope, SharingStarted.Lazily, null)
-    */
     val isPlanted = gardenPlantRepository.isPlanted(plantId).asLiveData()
     val plant = plantRepository.getPlant(plantId).asLiveData()
+    val gardenPlant = gardenPlantRepository.getGardenPlant(plantId).asLiveData()
 
-    fun addPlantToGarden() =
+    fun addPlantToGarden() {
         viewModelScope.launch(Dispatchers.IO) { gardenPlantRepository.createGardenPlant(plantId) }
+    }
+
+    fun removePlantFromGarden() {
+        viewModelScope.launch(Dispatchers.IO) { gardenPlantRepository.removeGardenPlant(plantId) }
+    }
+
+    fun waterPlant() = viewModelScope.launch(Dispatchers.IO) {
+        val plant = checkNotNull(gardenPlant.value)
+        gardenPlantRepository.waterPlant(plant)
+    }
 
     fun hasValidUnsplashKey() = BuildConfig.UNSPLASH_API_KEY != "null"
-
-    companion object {
-        private val TAG = "${PlantDetailViewModel::class.java.simpleName}_TAG"
-    }
 
 }

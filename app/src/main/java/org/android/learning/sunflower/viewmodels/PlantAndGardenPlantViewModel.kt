@@ -9,16 +9,11 @@ class PlantAndGardenPlantViewModel(plantings: PlantAndGardenPlant) {
     private val plant = checkNotNull(plantings.plant)
     private val gardenPlant = plantings.gardenPlants[0]
 
-    val waterDateString: String = dateFormat.format(gardenPlant.lastWateringDate.time)
-    val plantDateString: String = dateFormat.format(gardenPlant.plantDate.time)
+    val waterDateString: String = DATE_FORMAT.format(gardenPlant.lastWateringDate.time)
+    val plantDateString: String = DATE_FORMAT.format(gardenPlant.plantDate.time)
 
     val waterInterval get() = plant.wateringInterval
     val imageName get() = plant.imageAsset
     val plantName get() = plant.name
     val plantId get() = plant.plantId
-
-    companion object {
-        // TODO("Maybe later will be added another locales support")
-        private val dateFormat = SimpleDateFormat("MMM d, yyyy, HH:mm", Locale.US)
-    }
 }

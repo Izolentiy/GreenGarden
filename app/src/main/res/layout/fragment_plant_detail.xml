@@ -8,9 +8,6 @@
         <variable
             name="viewModel"
             type="org.android.learning.sunflower.viewmodels.PlantDetailViewModel" />
-        <variable
-            name="addPlantCallback"
-            type="org.android.learning.sunflower.fragments.PlantDetailFragment.AddPlantCallback" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -50,7 +47,7 @@
                     android:scaleType="centerCrop"
                     app:imageFromAsset="@{viewModel.plant.imageAsset}"
                     app:layout_collapseMode="parallax"
-                    tools:background="@tools:sample/backgrounds/scenic"/>
+                    tools:background="@tools:sample/backgrounds/scenic" />
 
                 <View
                     android:layout_width="match_parent"
@@ -68,14 +65,12 @@
                     app:layout_collapseMode="pin"
                     app:navigationIcon="@drawable/ic_detail_back"
                     app:titleTextColor="?attr/colorOnSurface"
-                    tools:title="Hello Mike"/>
+                    tools:title="Hello Mike" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!-- Later try to move this part in to separate layout file -->
-        <!-- <include layout="@layout/content_plant_detail" /> -->
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll_view_plant_detail"
             android:layout_width="match_parent"
@@ -91,44 +86,113 @@
                 android:paddingEnd="12dp"
                 android:paddingBottom="12dp">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/image_view_gallery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
                     android:background="?android:attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
                     android:contentDescription="@string/navigate_to_gallery"
-                    android:focusable="true"
                     android:src="@drawable/ic_photo_library"
                     app:isGone="@{!viewModel.hasValidUnsplashKey()}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/text_view_watering_label" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/image_view_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/water_plant"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_watering"
+                    app:isGone="@{!viewModel.isPlanted()}"
+                    app:layout_constraintBottom_toBottomOf="@id/text_view_watering_label"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/planted_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:isPlantLayoutGone="@{!viewModel.isPlanted}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/label_planted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/planted_label"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorAccent"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/label_last_watered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/last_watered_label"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorAccent"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_planted" />
+
+                    <TextView
+                        android:id="@+id/label_plant_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        app:layout_constraintStart_toEndOf="@id/labels_barrier"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@sample/plant_dates" />
+
+                    <TextView
+                        android:id="@+id/label_last_water_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        app:layout_constraintStart_toEndOf="@id/label_last_watered"
+                        app:layout_constraintTop_toBottomOf="@id/label_planted"
+                        tools:text="@sample/plant_dates" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/labels_barrier"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="label_planted, label_last_watered" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/text_view_watering_label"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:gravity="center"
                     android:text="@string/watering_needs"
                     android:textAppearance="?attr/textAppearanceSubtitle2"
                     android:textColor="?attr/colorAccent"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/planted_layout"
                     tools:text="Watering needs" />
 
                 <TextView
                     android:id="@+id/text_view_detail_water_interval"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_marginStart="8dp"
                     android:textAppearance="?attr/textAppearanceSubtitle2"
                     android:textColor="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_watering_label"
+                    app:layout_constraintStart_toEndOf="@id/text_view_watering_label"
+                    app:layout_constraintTop_toTopOf="@id/text_view_watering_label"
                     app:wateringText="@{viewModel.plant.wateringInterval}"
                     tools:text="every 4 days" />
 
@@ -150,17 +214,15 @@
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_add_to_garden"
+            android:id="@+id/fab_plant_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:contentDescription="@string/add_to_garden"
-            android:onClick="@{() -> addPlantCallback.addPlant(viewModel.plant)}"
-            app:isFabGone="@{viewModel.isPlanted}"
+            android:contentDescription="@string/remove_add_to_garden"
             app:layout_anchor="@id/appbar_detail"
             app:layout_anchorGravity="bottom|end"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.SunflowerClone.FAB"
-            app:srcCompat="@drawable/ic_plus" />
+            tools:srcCompat="@drawable/ic_plus" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

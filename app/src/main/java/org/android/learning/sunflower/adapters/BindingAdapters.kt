@@ -7,13 +7,13 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.text.HtmlCompat
 import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.android.learning.sunflower.R
 
 @BindingAdapter("imageFromUrl")
@@ -46,10 +46,10 @@ fun bindIsGone(view: View, isGone: Boolean) {
     view.visibility = if (isGone) View.GONE else View.VISIBLE
 }
 
-@BindingAdapter("isFabGone")
-fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) {
-    if (isGone == null || isGone) view.hide()
-    else view.show()
+@BindingAdapter("isPlantLayoutGone")
+fun bindIsPlantLayoutGone(view: ConstraintLayout, isGone: Boolean?) {
+    view.visibility = if (isGone == null || isGone) View.GONE
+    else View.VISIBLE
 }
 
 @BindingAdapter("renderHtml")

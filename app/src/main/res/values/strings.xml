@@ -9,7 +9,7 @@
     <string name="garden_tab_title">My garden</string>
     <string name="plants_tab_title">Plants</string>
     <string name="navigate_to_gallery">Navigate to gallery</string>
-    <string name="add_to_garden">Add to garden</string>
+    <string name="remove_add_to_garden">Remove plant from or add to garden</string>
     <string name="added_plant_to_garden">Added plant to garden</string>
     <string name="watering_text_format">every %d days</string>
     <string name="watering_text_garden_format">water in %d days</string>
@@ -27,4 +27,9 @@
     <string name="detail_unknown">An unknown error occurred while loading data</string>
     <string name="button_retry">Retry</string>
     <string name="retry_button_description">Retry button</string>
+    <string name="removed_plant_from_garden">Removed plant from garden</string>
+    <string name="water_plant">Water plant</string>
+    <string name="delete_plant_dialog_message">Do you want to remove this plant from your garden?</string>
+    <string name="delete_plant_dialog_pos_action">Remove</string>
+    <string name="delete_plant_dialog_title">Remove plant</string>
 </resources>

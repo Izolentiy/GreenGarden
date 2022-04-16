@@ -16,6 +16,15 @@ interface GardenPlantDao {
     @Query("select * from plants where id in (select distinct(plant_id) from garden_plants)")
     fun getPlantedGardens(): Flow<List<PlantAndGardenPlant>>
 
+    @Query("select * from garden_plants where plant_id = :plantId")
+    fun getGardenPlant(plantId: String): Flow<GardenPlant?>
+
+    @Query("delete from garden_plants where plant_id = :plantId")
+    suspend fun removeGardenPlant(plantId: String)
+
+    @Update
+    suspend fun updateGardenPlant(gardenPlant: GardenPlant)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertGardenPlant(gardenPlant: GardenPlant)
 
